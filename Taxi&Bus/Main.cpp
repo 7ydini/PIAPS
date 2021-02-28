@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Абстрактные базовые классы всех возможных видов воинов
+// Абстрактные базовые классы для пассажира и водителя
 
 class Driver
 {
@@ -20,7 +20,7 @@ public:
 	virtual ~BoardAnyCar() {}
 };
 
-// Классы всех видов воинов Римской армии
+// Классы всех людей в автобусе
 
 class BusDriver : public Driver
 {
@@ -37,7 +37,7 @@ public:
 		cout << "Passenger" << endl;
 	}
 };
-// Классы всех видов воинов армии Карфагена
+// Классы всех людей в такси
 
 class TaxiDriver : public Driver
 {
@@ -55,7 +55,7 @@ public:
 	}
 };
 
-// Абстрактная фабрика для производства воинов
+// Абстрактная фабрика для производства людей
 
 class PeopleFactory
 {
@@ -65,7 +65,7 @@ public:
 	virtual ~PeopleFactory() {}
 };
 
-// Фабрика для создания воинов Римской армии
+// Фабрика для создания людей в автобусе
 
 class BusPeopleFactory : public PeopleFactory
 {
@@ -78,7 +78,7 @@ public:
 	}
 };
 
-// Фабрика для создания воинов армии Карфагена
+// Фабрика для создания людей в такси
 
 class TaxiPeopleFactory : public PeopleFactory
 {
@@ -91,7 +91,7 @@ public:
 	}
 };
 
-// Класс, содержащий всех воинов той или иной армии
+// Класс, содержащий всех людей в автобусе/такси
 
 class People
 {
@@ -112,18 +112,9 @@ public:
 
 };
 
-// Здесь создается армия той или иной стороны
-
 class Game
 {
 public:
-
-	People* createD(PeopleFactory& factory) {
-		People* p = new People;
-		p->vi.push_back(factory.createDriver());
-		//p->va.push_back(factory.createPassenger());
-		return p;
-	}
 	People* createP(PeopleFactory& factory, int pas) {
 		People* p = new People;
 		p->vi.push_back(factory.createDriver());
