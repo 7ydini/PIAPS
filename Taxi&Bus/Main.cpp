@@ -152,6 +152,7 @@ int main()
 			case(1):
 				if (pasBus < 29) {
 					pasBus++;
+					cout << "Passenger added: " << pasBus << " / 29" << endl;
 				}
 				else cout << "Bus is full\n\n" << endl;
 				break;
@@ -179,6 +180,7 @@ int main()
 			case(1):
 				if (pasTaxi < 3) {
 					pasTaxi++;
+					cout << "Passenger added: " << pasTaxi << " / 3" <<  endl;
 				}
 				else cout << "Taxi is full\n" << endl;
 				break;
