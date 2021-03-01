@@ -26,7 +26,7 @@ class BusDriver : public Driver
 {
 public:
 	void info() {
-		cout << "Driver" << endl;
+		cout << "Bus Driver" << endl;
 	}
 };
 
@@ -43,7 +43,7 @@ class TaxiDriver : public Driver
 {
 public:
 	void info() {
-		cout << "Driver" << endl;
+		cout << "Taxi Driver" << endl;
 	}
 };
 
