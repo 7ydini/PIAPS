@@ -6,7 +6,7 @@
 using namespace std;
 
 // Абстрактные базовые классы для пассажира и водителя
-int loadAuto(string pasType, BusPeopleFactory bus_factory, string name, int passMax);
+int loadAuto(string pasType, string name, int passMax);
 class Driver
 {
 public:
@@ -32,6 +32,7 @@ public:
 class BoardPizzaCar : public BoardAnyCar
 {
 public:
+	int pasMax = 20;
 	void info() {
 		cout << "Pizza" << endl;
 	}
@@ -49,7 +50,7 @@ public:
 class BoardBus : public BoardAnyCar
 {
 public:
-	int pasMax = 30;
+	int pasMax = 29;
 	void info() {
 		cout << "Passenger" << endl;
 	}
@@ -67,6 +68,7 @@ public:
 class BoardTaxi : public BoardAnyCar
 {
 public:
+	int pasMax = 3;
 	void info() {
 		cout << "Passenger" << endl;
 	}
@@ -80,7 +82,6 @@ public:
 	virtual Driver* createDriver() = 0;
 	virtual BoardAnyCar* createPassenger() = 0;
 	virtual ~PeopleFactory() {}
-	//virtual bool check(int pas, int pasMax) = 0;
 };
 
 // Фабрика для создания людей в автобусе
@@ -93,10 +94,6 @@ public:
 	}
 	BoardAnyCar* createPassenger() {
 		return new BoardBus;
-	}
-	bool check(int pas, int pasMax) {
-		if (pas < pasMax) return true;
-
 	}
 };
 
@@ -165,8 +162,9 @@ int main()
 	BusPeopleFactory bus_factory;
 	TaxiPeopleFactory taxi_factory;
 	PizzaFactory pizza_factory;
-	BoardBus psmax;
-	int g = psmax.pasMax;
+	BoardBus busMax;
+	BoardTaxi taxiMax;
+	BoardPizzaCar pizzaMax;
 	int i = 0;
 	People* bus;
 	People* taxi;
@@ -178,40 +176,40 @@ int main()
 		{
 
 		case(1):
-			bus = game.createP(bus_factory, loadAuto("Passenger", bus_factory,"Bus", g));
+			bus = game.createP(bus_factory, loadAuto("Passenger", "Bus", busMax.pasMax));
 			cout << "Bus went, board:" << endl;
 			bus->info();
 			break;
 		case(2):
-			//taxi = game.createP(taxi_factory, loadAuto("Passenger","Taxi", 3));
+			taxi = game.createP(taxi_factory, loadAuto("Passenger","Taxi", taxiMax.pasMax));
 			cout << "Taxi went, board:" << endl;
 			taxi->info();
 			break;
 
 		case(3):
-			//pizza = game.createP(pizza_factory, loadAuto("Pizza", "PizzaCar", 20));
+			pizza = game.createP(pizza_factory, loadAuto("Pizza", "PizzaCar", pizzaMax.pasMax));
 			cout << "PizzaCar went, board:" << endl;
-			pizza-> info();
+			pizza->info();
 			break;
 		}
 	} while (i != 4);
 }
 
-int loadAuto(string pasType, BusPeopleFactory bus_factory, string name, int passMax){
+int loadAuto(string pasType, string name, int passMax) {
 	cout << "Fill " << name << endl;
 	int pass = 0, j = 0;
 	do
 	{
-		cout << "1)Add "<< pasType <<".\n2)Info\n3)Go Go Go\n" << endl;
+		cout << "1)Add " << pasType << ".\n2)Info\n3)Go Go Go\n" << endl;
 		cin >> j;
 		switch (j)
 		{
 		case(1):
-			if (bus_factory.check(pass, passMax)){
+			if (pass < passMax) {
 				pass++;
-				cout << pasType <<" added: " << pass << " / " << passMax << ".\n" << endl;
+				cout << pasType << " added: " << pass << " / " << passMax << ".\n" << endl;
 			}
-			else cout << name <<" is full\n" << endl;
+			else cout << name << " is full\n" << endl;
 			break;
 		case(2):
 
