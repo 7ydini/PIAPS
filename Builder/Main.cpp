@@ -26,8 +26,8 @@
 
 using namespace std;
 
-// Абстрактные базовые классы для пассажира и водителя
-size_t loadAuto(string pasType, string name, int passMax);
+// ГЂГЎГ±ГІГ°Г ГЄГІГ­Г»ГҐ ГЎГ Г§Г®ГўГ»ГҐ ГЄГ«Г Г±Г±Г» Г¤Г«Гї ГЇГ Г±Г±Г Г¦ГЁГ°Г  ГЁ ГўГ®Г¤ГЁГІГҐГ«Гї
+BoardBus loadAuto(string pasType, string name, int passMax);
 class Director
 {
 public:
@@ -160,8 +160,9 @@ int main()
 	} while (i != 4);
 }
 
-size_t loadAuto(string pasType, string name, int passMax) {
+BoardBus loadAuto(string pasType, string name, int passMax) {
 	cout << "Fill " << name << endl;
+	BoardBus b;
 	int pass = 0, j = 0;
 	do
 	{
@@ -170,10 +171,11 @@ size_t loadAuto(string pasType, string name, int passMax) {
 		switch (j)
 		{
 		case(1): {
-			BoardBus b;
+			
 			if (pass < passMax) {
 				cout << "1)Add Grown \n" << "2)Add Beneficiary \n" << "3)Add Child" << endl;
 				int t = 0;
+				
 				while (t < 1 && t > 3)
 				{
 					cin >> t;
@@ -199,7 +201,7 @@ size_t loadAuto(string pasType, string name, int passMax) {
 			cout << name << " " << pasType << "s: " << pass << " / " << passMax << ".\n" << endl;
 			break;
 		case(3):
-			return pass;
+			return b;
 			break;
 		}
 	} while (j != 3);
