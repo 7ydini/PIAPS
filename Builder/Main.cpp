@@ -26,7 +26,7 @@
 
 using namespace std;
 
-// РђР±СЃС‚СЂР°РєС‚РЅС‹Рµ Р±Р°Р·РѕРІС‹Рµ РєР»Р°СЃСЃС‹ РґР»СЏ РїР°СЃСЃР°Р¶РёСЂР° Рё РІРѕРґРёС‚РµР»СЏ
+// Абстрактные базовые классы для пассажира и водителя
 size_t loadAuto(string pasType, string name, int passMax);
 class Director
 {
