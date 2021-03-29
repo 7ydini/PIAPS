@@ -60,7 +60,6 @@ public:
 			}
 			else cout << "Bus is full\n" << endl;
 		case(2): {
-
 			cout << "Bus Passengers: " << pass << " / " << b.pasMax << ".\n" << endl;
 			cout << "Bus Child passengers: " << b.ChilPas << ".\n" << endl;
 			cout << "Bus Beneficiary passengers: " << b.LgotPas << ".\n" << endl;
@@ -74,7 +73,8 @@ public:
 			Director dir;
 			People* bus;
 			bus = dir.createBoard(bus_factory, b.OldPas, b.LgotPas, b.ChilPas);
-			//return b;
+			cout << "Bus went, board:" << endl;
+			b->info();
 			break;
 		}
 		}

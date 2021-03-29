@@ -130,9 +130,6 @@ int main()
 	BoardTaxi taxiMax;
 	BoardPizzaCar pizzaMax;
 	int i = 0;
-	People* bus;
-	People* taxi;
-	People* pizza;
 	do {
 		cout << "Filling:\n1)Bus\n2)Taxi\n3)PizzaCar\n4)Exit\n" << endl;
 		cin >> i;
@@ -142,16 +139,17 @@ int main()
 		case(1):
 			//loadAuto("Passenger", "Bus", busMax.pasMax);
 			//bus = dir.createBoard(bus_factory, busMax.OldPas, busMax.LgotPas, busMax.ChilPas);
-			busMax.LoadBus();
-			cout << "Bus went, board:" << endl;
+			busMax.LoadBus(busMax);
+			break;
+			//cout << "Bus went, board:" << endl;
 			
 			break;
 		case(2):
-			taxiMax.loadTaxi();
+			taxiMax.loadTaxi(TaxiMax);
 			//loadAuto("Passenger", "Taxi", taxiMax.pasMax);
 			//taxi = dir.createBoard(taxi_factory, taxiMax.OldPas, 0, taxiMax.ChilPas);
-			cout << "Taxi went, board:" << endl;
-			taxi->info();
+			//cout << "Taxi went, board:" << endl;
+			//taxi->info();
 			break;
 
 		case(3):
