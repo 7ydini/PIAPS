@@ -8,6 +8,7 @@
 #include "AbstractFactory/OldPas.h"
 #include "AbstractFactory/LgotPas.h"
 #include "AbstractFactory/ChilPas.h"
+#include "AbstractFactory/Passenger.h"
 
 
 #include "Pizza/PizzaCarDriver.h"
@@ -27,7 +28,7 @@
 using namespace std;
 
 // Àáñòðàêòíûå áàçîâûå êëàññû äëÿ ïàññàæèðà è âîäèòåëÿ
-BoardBus loadAuto(string pasType, string name, int passMax);
+//BoardBus loadAuto(string pasType, string name, int passMax);
 class Director
 {
 public:
@@ -139,14 +140,16 @@ int main()
 		{
 
 		case(1):
-			loadAuto("Passenger", "Bus", busMax.pasMax);
-			bus = dir.createBoard(bus_factory, busMax.OldPas, busMax.LgotPas, busMax.ChilPas);
+			//loadAuto("Passenger", "Bus", busMax.pasMax);
+			//bus = dir.createBoard(bus_factory, busMax.OldPas, busMax.LgotPas, busMax.ChilPas);
+			busMax.LoadBus();
 			cout << "Bus went, board:" << endl;
-			bus->info();
+			
 			break;
 		case(2):
-			loadAuto("Passenger", "Taxi", taxiMax.pasMax);
-			taxi = dir.createBoard(taxi_factory, taxiMax.OldPas, 0, taxiMax.ChilPas);
+			taxiMax.loadTaxi();
+			//loadAuto("Passenger", "Taxi", taxiMax.pasMax);
+			//taxi = dir.createBoard(taxi_factory, taxiMax.OldPas, 0, taxiMax.ChilPas);
 			cout << "Taxi went, board:" << endl;
 			taxi->info();
 			break;
@@ -160,49 +163,49 @@ int main()
 	} while (i != 4);
 }
 
-BoardBus loadAuto(string pasType, string name, int passMax) {
-	cout << "Fill " << name << endl;
-	BoardBus b;
-	int pass = 0, j = 0;
-	do
-	{
-		cout << "1)Add " << pasType << ".\n2)Info\n3)Go Go Go\n" << endl;
-		cin >> j;
-		switch (j)
-		{
-		case(1): {
-			
-			if (pass < passMax) {
-				cout << "1)Add Grown \n" << "2)Add Beneficiary \n" << "3)Add Child" << endl;
-				int t = 0;
-				
-				while (t < 1 && t > 3)
-				{
-					cin >> t;
-				}
-				switch (t) {
-				case(1):
-					b.OldPas++;
-
-				case(2):
-					b.LgotPas++;
-			
-				case(3):
-					b.ChilPas++;
-				}
-				pass++;
-				cout << pasType << " added: " << pass << " / " << passMax << ".\n" << endl;
-			}
-			else cout << name << " is full\n" << endl;
-			break;
-		}
-		case(2):
-
-			cout << name << " " << pasType << "s: " << pass << " / " << passMax << ".\n" << endl;
-			break;
-		case(3):
-			return b;
-			break;
-		}
-	} while (j != 3);
-}
+//BoardBus loadAuto(string pasType, string name, int passMax) {
+//	cout << "Fill " << name << endl;
+//	BoardBus b;
+//	int pass = 0, j = 0;
+//	do
+//	{
+//		cout << "1)Add " << pasType << ".\n2)Info\n3)Go Go Go\n" << endl;
+//		cin >> j;
+//		switch (j)
+//		{
+//		case(1): {
+//			
+//			if (pass < passMax) {
+//				cout << "1)Add Grown \n" << "2)Add Beneficiary \n" << "3)Add Child" << endl;
+//				int t = 0;
+//				
+//				while (t < 1 && t > 3)
+//				{
+//					cin >> t;
+//				}
+//				switch (t) {
+//				case(1):
+//					b.OldPas++;
+//
+//				case(2):
+//					b.LgotPas++;
+//			
+//				case(3):
+//					b.ChilPas++;
+//				}
+//				pass++;
+//				cout << pasType << " added: " << pass << " / " << passMax << ".\n" << endl;
+//			}
+//			else cout << name << " is full\n" << endl;
+//			break;
+//		}
+//		case(2):
+//
+//			cout << name << " " << pasType << "s: " << pass << " / " << passMax << ".\n" << endl;
+//			break;
+//		case(3):
+//			return b;
+//			break;
+//		}
+//	} while (j != 3);
+//}
