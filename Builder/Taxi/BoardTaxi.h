@@ -2,9 +2,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "AbstractFactory/BoardAnyCar.h"
-#include "AbstractFactory/OldPas.h"
-#include "AbstractFactory/ChilPas.h"
+#include "../AbstractFactory/BoardAnyCar.h"
+#include "../AbstractFactory/Passenger.h"
+//#include "../AbstractFactory/ChilPas.h"
 
 
 using namespace std;
@@ -18,10 +18,10 @@ public:
 	void info() {
 		cout << "Taxi Passenger" << endl;
 	}
-	
+
 	void LoadTaxi(BoardTaxi b) {
 		//loadAuto("Passenger", "Bus", busMax.pasMax);
-		int pass = 0;
+		int pass = 0, j = 0;
 		//cout << "Bus went, board:" << endl;
 		//bus->info();
 		do {
@@ -31,7 +31,7 @@ public:
 			{
 			case(1): {
 
-				if (pass < passMax) {
+				if (pass < pasMax) {
 					cout << "1)Add Grown \n" << "2)Add Beneficiary \n" << "3)Add Child" << endl;
 					int t = 0;
 
@@ -58,30 +58,30 @@ public:
 					//pass++;
 
 				}
-				else cout << "Bus is full\n" << endl;
+				else cout << "Taxi is full\n" << endl;
 			case(2): {
 
-				cout << "Bus Passengers: " << pass << " / " << b.pasMax << ".\n" << endl;
-				cout << "Bus Child passengers: " << b.ChilPas << ".\n" << endl;
-				cout << "Bus Beneficiary passengers: " << b.LgotPas << ".\n" << endl;
-				cout << "Bus Grown passengers: " << b.OldPas << ".\n" << endl;
+				cout << "Taxi Passengers: " << pass << " / " << b.pasMax << ".\n" << endl;
+				cout << "Taxi Child passengers: " << b.ChilPas << ".\n" << endl;
+				cout << "Taxi Grown passengers: " << b.OldPas << ".\n" << endl;
 				break;
 			}
 
 			case(3):
 			{
-				BusPeopleFactory bus_factory;
+				TaxiPeopleFactory taxi_factory;
 				Director dir;
-				People* bus;
-				bus = dir.createBoard(bus_factory, b.OldPas, b.LgotPas, b.ChilPas);
+				People* taxi;
+				taxi = dir.createBoard(taxi_factory, b.OldPas, /*b.LgotPas*/0, b.ChilPas);
 				cout << "Taxi went, board:" << endl;
-				b->info();
+				taxi->info();
 				break;
 			}
 			}
 
 			}
 		} while (j != 3);
+	};
 };
 
 

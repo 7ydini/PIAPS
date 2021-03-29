@@ -5,9 +5,9 @@
 #include "AbstractFactory/BoardAnyCar.h"
 #include "AbstractFactory/Driver.h"
 #include "AbstractFactory/PeopleFactory.h"
-#include "AbstractFactory/OldPas.h"
-#include "AbstractFactory/LgotPas.h"
-#include "AbstractFactory/ChilPas.h"
+//#include "AbstractFactory/OldPas.h"
+//#include "AbstractFactory/LgotPas.h"
+//#include "AbstractFactory/ChilPas.h"
 #include "AbstractFactory/Passenger.h"
 
 
@@ -46,52 +46,52 @@ public:
 		}
 		builder.buildDriver();
 		//builder.buildElephant();
-		return(builder.getPeople());
+		builder.getPeople();
 	}
 };
 
-class Army
-{
-public:
-	vector<OldPas> vop;
-	vector<LgotPas> vlp;
-	vector<ChilPas> vcp;
-	vector<Driver> vd;
-	//vector<Catapult> vc;
-	//vector<Elephant> ve;
-	void info() {
-		int i;
-		for (i = 0; i < vop.size(); ++i)  vop[i].info();
-		for (i = 0; i < vlp.size(); ++i)  vlp[i].info();
-		for (i = 0; i < vcp.size(); ++i)  vcp[i].info();
-		for (i = 0; i < vd.size(); ++i)  vd[i].info();
-		//for (i = 0; i < ve.size(); ++i)  ve[i].info();
-	}
-};
-
-class ArmyBuilder
-{
-protected:
-	Army* p;
-public:
-	ArmyBuilder() : p(0) {}
-	virtual ~ArmyBuilder() {}
-	virtual void createArmy() {}
-	virtual void buildInfantryman() {}
-	virtual void buildArcher() {}
-	virtual void buildHorseman() {}
-	virtual void buildCatapult() {}
-	virtual void buildElephant() {}
-	virtual Army* getArmy() { return p; }
-};
+//class Army
+//{
+//public:
+//	vector<Passenger> vop;
+//	vector<Passenger> vlp;
+//	vector<Passenger> vcp;
+//	vector<Driver> vd;
+//	//vector<Catapult> vc;
+//	//vector<Elephant> ve;
+//	void info() {
+//		int i;
+//		for (i = 0; i < vop.size(); ++i)  vop[i].info();
+//		for (i = 0; i < vlp.size(); ++i)  vlp[i].info();
+//		for (i = 0; i < vcp.size(); ++i)  vcp[i].info();
+//		for (i = 0; i < vd.size(); ++i)  vd[i].info();
+//		//for (i = 0; i < ve.size(); ++i)  ve[i].info();
+//	}
+//};
+//
+//class ArmyBuilder
+//{
+//protected:
+//	Army* p;
+//public:
+//	ArmyBuilder() : p(0) {}
+//	virtual ~ArmyBuilder() {}
+//	virtual void createArmy() {}
+//	virtual void buildInfantryman() {}
+//	virtual void buildArcher() {}
+//	virtual void buildHorseman() {}
+//	virtual void buildCatapult() {}
+//	virtual void buildElephant() {}
+//	virtual Army* getArmy() { return p; }
+//};
 
 
 class People
 {
 public:
-	vector<OldPas> vi;
-	vector<LgotPas> va;
-	vector<ChilPas> vh;
+	vector<Passenger> vi;
+	vector<Passenger> va;
+	vector<Passenger> vh;
 	vector<Driver> vc;
 	//vector<Elephant>    ve;
 	void info() {
@@ -104,25 +104,13 @@ public:
 	}
 };
 
-//class Game
-//{
-//public:
-//	People* createP(PeopleFactory& factory, int OldPas) {
-//		People* p = new People;
-//		p->vc.push_back(factory.buildDriver());
-//		for (int i = 0; i < OldPas; i++)
-//		{
-//			p->vi.push_back(factory.buildOldPas());
-//		}
-//		return p;
-//	}
-//};
-
 int main()
 {
 	//Game game;
 	Director dir;
 
+	People* bus;
+	People* taxi;
 	BusPeopleFactory bus_factory;
 	TaxiPeopleFactory taxi_factory;
 	PizzaFactory pizza_factory;
@@ -140,12 +128,13 @@ int main()
 			//loadAuto("Passenger", "Bus", busMax.pasMax);
 			//bus = dir.createBoard(bus_factory, busMax.OldPas, busMax.LgotPas, busMax.ChilPas);
 			busMax.LoadBus(busMax);
+			//bus = dir.createBoard(bus_factory, busMax.OldPas, busMax.LgotPas, busMax.ChilPas);
 			break;
 			//cout << "Bus went, board:" << endl;
 			
 			break;
 		case(2):
-			taxiMax.loadTaxi(TaxiMax);
+			taxiMax.LoadTaxi(taxiMax);
 			//loadAuto("Passenger", "Taxi", taxiMax.pasMax);
 			//taxi = dir.createBoard(taxi_factory, taxiMax.OldPas, 0, taxiMax.ChilPas);
 			//cout << "Taxi went, board:" << endl;
@@ -155,55 +144,8 @@ int main()
 		case(3):
 			//pizza = dir.createBoard(pizza_factory, loadAuto("Pizza", "PizzaCar", pizzaMax.pasMax));
 			cout << "PizzaCar went, board:" << endl;
-			pizza->info();
+			//pizza->info();
 			break;
 		}
 	} while (i != 4);
 }
-
-//BoardBus loadAuto(string pasType, string name, int passMax) {
-//	cout << "Fill " << name << endl;
-//	BoardBus b;
-//	int pass = 0, j = 0;
-//	do
-//	{
-//		cout << "1)Add " << pasType << ".\n2)Info\n3)Go Go Go\n" << endl;
-//		cin >> j;
-//		switch (j)
-//		{
-//		case(1): {
-//			
-//			if (pass < passMax) {
-//				cout << "1)Add Grown \n" << "2)Add Beneficiary \n" << "3)Add Child" << endl;
-//				int t = 0;
-//				
-//				while (t < 1 && t > 3)
-//				{
-//					cin >> t;
-//				}
-//				switch (t) {
-//				case(1):
-//					b.OldPas++;
-//
-//				case(2):
-//					b.LgotPas++;
-//			
-//				case(3):
-//					b.ChilPas++;
-//				}
-//				pass++;
-//				cout << pasType << " added: " << pass << " / " << passMax << ".\n" << endl;
-//			}
-//			else cout << name << " is full\n" << endl;
-//			break;
-//		}
-//		case(2):
-//
-//			cout << name << " " << pasType << "s: " << pass << " / " << passMax << ".\n" << endl;
-//			break;
-//		case(3):
-//			return b;
-//			break;
-//		}
-//	} while (j != 3);
-//}
