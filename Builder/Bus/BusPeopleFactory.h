@@ -8,6 +8,7 @@
 
 class BusPeopleFactory : public PeopleFactory
 {
+	
 public:
 	void createBoard() { p = new People; }
 	void buildOldPas() { p->vi.push_back(OldPas()); }
