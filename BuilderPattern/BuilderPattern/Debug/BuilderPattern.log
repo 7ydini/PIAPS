@@ -1,0 +1,16 @@
+﻿  Main.cpp
+c:\users\8182160\source\repos\builderpattern\builderpattern\people.h(21): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\people.h(22): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\people.h(23): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\people.h(24): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\buspeople.h(24): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\buspeople.h(25): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\buspeople.h(26): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\buspeople.h(27): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\boardbus.h(72): error C2440: '=': cannot convert from 'People *' to 'BusPeople *'
+  c:\users\8182160\source\repos\builderpattern\builderpattern\boardbus.h(72): note: Cast from base to derived requires dynamic_cast or static_cast
+c:\users\8182160\source\repos\builderpattern\builderpattern\taxipeople.h(24): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\taxipeople.h(26): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\taxipeople.h(27): warning C4018: '<': signed/unsigned mismatch
+c:\users\8182160\source\repos\builderpattern\builderpattern\boardtaxi.h(78): error C2440: '=': cannot convert from 'People *' to 'TaxiPeople *'
+  c:\users\8182160\source\repos\builderpattern\builderpattern\boardtaxi.h(78): note: Cast from base to derived requires dynamic_cast or static_cast
