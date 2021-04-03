@@ -1,6 +1,10 @@
 #pragma once
 #include"People.h"
 #include"PeopleFactory.h"
+#include"TaxiPeopleFactory.h"
+#include"TaxiPeople.h"
+#include"BusPeopleFactory.h"
+#include"BusPeople.h"
 
 class Director
 {
@@ -22,7 +26,7 @@ public:
 		return{ builder.getPeople() };
 	}
 
-	BusPeople* createBusBoard(BusPeopleFactory& builder, int OldPas, int LgotPas, int ChilPas){
+	BusPeople* createBusBoard(BusPeopleFactory& builder, int OldPas, int LgotPas, int ChilPas) {
 
 		builder.createBoard();
 		for (int z = 0; z < OldPas; z++) {
