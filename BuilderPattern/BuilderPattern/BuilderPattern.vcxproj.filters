@@ -22,76 +22,13 @@
     <Filter Include="Header Files\Taxi">
       <UniqueIdentifier>{817e32ec-6e22-417e-b2ac-3be7bdc0faf7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\AbstractFactory">
-      <UniqueIdentifier>{47feed9c-18a8-48b6-8d9b-1fe20a997bab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Bus">
-      <UniqueIdentifier>{49943ae8-095c-4dfd-9b29-9236dc41a228}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Taxi">
-      <UniqueIdentifier>{c33bb0d3-2d31-41e6-84f8-27bb0f9c734d}</UniqueIdentifier>
+    <Filter Include="Header Files\Boat">
+      <UniqueIdentifier>{1babc624-7839-4804-be34-aacb5339f95a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BoardBus.cpp">
-      <Filter>Source Files\Bus</Filter>
-    </ClCompile>
-    <ClCompile Include="BusDriver.cpp">
-      <Filter>Source Files\Bus</Filter>
-    </ClCompile>
-    <ClCompile Include="BusPeople.cpp">
-      <Filter>Source Files\Bus</Filter>
-    </ClCompile>
-    <ClCompile Include="BusPeopleFactory.cpp">
-      <Filter>Source Files\Bus</Filter>
-    </ClCompile>
-    <ClCompile Include="LgotBusPas.cpp">
-      <Filter>Source Files\Bus</Filter>
-    </ClCompile>
-    <ClCompile Include="OldBusPas.cpp">
-      <Filter>Source Files\Bus</Filter>
-    </ClCompile>
-    <ClCompile Include="ChilBusPas.cpp">
-      <Filter>Source Files\Bus</Filter>
-    </ClCompile>
-    <ClCompile Include="BoardTaxi.cpp">
-      <Filter>Source Files\Taxi</Filter>
-    </ClCompile>
-    <ClCompile Include="ChilTaxiPas.cpp">
-      <Filter>Source Files\Taxi</Filter>
-    </ClCompile>
-    <ClCompile Include="OldTaxiPas.cpp">
-      <Filter>Source Files\Taxi</Filter>
-    </ClCompile>
-    <ClCompile Include="TaxiDriver.cpp">
-      <Filter>Source Files\Taxi</Filter>
-    </ClCompile>
-    <ClCompile Include="TaxiPeople.cpp">
-      <Filter>Source Files\Taxi</Filter>
-    </ClCompile>
-    <ClCompile Include="TaxiPeopleFactory.cpp">
-      <Filter>Source Files\Taxi</Filter>
-    </ClCompile>
-    <ClCompile Include="BoardAnyCar.cpp">
-      <Filter>Source Files\AbstractFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="Director.cpp">
-      <Filter>Source Files\AbstractFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="Driver.cpp">
-      <Filter>Source Files\AbstractFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="People.cpp">
-      <Filter>Source Files\AbstractFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="PeopleFactory.cpp">
-      <Filter>Source Files\AbstractFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="Passenger.cpp">
-      <Filter>Source Files\AbstractFactory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +87,30 @@
       <Filter>Header Files\Bus</Filter>
     </ClInclude>
     <ClInclude Include="TaxiPeople.h">
+      <Filter>Header Files\Taxi</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardBoat.h">
+      <Filter>Header Files\Boat</Filter>
+    </ClInclude>
+    <ClInclude Include="BoatDriver.h">
+      <Filter>Header Files\Boat</Filter>
+    </ClInclude>
+    <ClInclude Include="BoatChildPas.h">
+      <Filter>Header Files\Boat</Filter>
+    </ClInclude>
+    <ClInclude Include="BoatPeopleFactory.h">
+      <Filter>Header Files\Boat</Filter>
+    </ClInclude>
+    <ClInclude Include="BoatPeople.h">
+      <Filter>Header Files\Boat</Filter>
+    </ClInclude>
+    <ClInclude Include="BoatOldPas.h">
+      <Filter>Header Files\Boat</Filter>
+    </ClInclude>
+    <ClInclude Include="BoatLifeVest.h">
+      <Filter>Header Files\Boat</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildSit.h">
       <Filter>Header Files\Taxi</Filter>
     </ClInclude>
   </ItemGroup>

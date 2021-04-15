@@ -22,32 +22,32 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{19B21452-EADE-4792-8E90-A0A7FEAEAEC2}</ProjectGuid>
     <RootNamespace>BuilderPattern</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -123,35 +123,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BoardAnyCar.cpp" />
-    <ClCompile Include="BoardBus.cpp" />
-    <ClCompile Include="BoardTaxi.cpp" />
-    <ClCompile Include="BusDriver.cpp" />
-    <ClCompile Include="BusPeople.cpp" />
-    <ClCompile Include="BusPeopleFactory.cpp" />
-    <ClCompile Include="ChilBusPas.cpp" />
-    <ClCompile Include="ChilTaxiPas.cpp" />
-    <ClCompile Include="Director.cpp" />
-    <ClCompile Include="Driver.cpp" />
-    <ClCompile Include="LgotBusPas.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="OldBusPas.cpp" />
-    <ClCompile Include="OldTaxiPas.cpp" />
-    <ClCompile Include="Passenger.cpp" />
-    <ClCompile Include="People.cpp" />
-    <ClCompile Include="PeopleFactory.cpp" />
-    <ClCompile Include="TaxiDriver.cpp" />
-    <ClCompile Include="TaxiPeople.cpp" />
-    <ClCompile Include="TaxiPeopleFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoardAnyCar.h" />
+    <ClInclude Include="BoardBoat.h" />
     <ClInclude Include="BoardBus.h" />
     <ClInclude Include="BoardTaxi.h" />
+    <ClInclude Include="BoatChildPas.h" />
+    <ClInclude Include="BoatDriver.h" />
+    <ClInclude Include="BoatLifeVest.h" />
+    <ClInclude Include="BoatOldPas.h" />
+    <ClInclude Include="BoatPeople.h" />
+    <ClInclude Include="BoatPeopleFactory.h" />
     <ClInclude Include="BusDriver.h" />
     <ClInclude Include="BusPeople.h" />
     <ClInclude Include="BusPeopleFactory.h" />
     <ClInclude Include="ChilBusPas.h" />
+    <ClInclude Include="ChildSit.h" />
     <ClInclude Include="ChilTaxiPas.h" />
     <ClInclude Include="Director.h" />
     <ClInclude Include="Driver.h" />

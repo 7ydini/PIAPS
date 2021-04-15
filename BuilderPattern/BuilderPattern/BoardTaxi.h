@@ -35,7 +35,7 @@ public:
 			case(1): {
 
 				if (pass < pasMax) {
-					cout << "1)Add Grown \n" << "2)Add Beneficiary \n" << "3)Add Child" << endl;
+					cout << "1)Add Grown \n" << "2)Add Child \n" << endl;
 					int t = 0;
 					do {
 						cin >> t;

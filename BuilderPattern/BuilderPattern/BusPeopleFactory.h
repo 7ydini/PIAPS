@@ -13,7 +13,7 @@ protected:
 public:
 	BusPeopleFactory() : p(0) {}
 	~BusPeopleFactory() {}
-	void createBoard() { p = new BusPeople(); }
+	void createBoard() { p = new BusPeople; }
 	void buildOldPas() { p->vi.push_back(OldBusPas()); }
 	void buildLgotPas() { p->va.push_back(LgotBusPas()); }
 	void buildChilPas() { p->vh.push_back(ChilBusPas()); }

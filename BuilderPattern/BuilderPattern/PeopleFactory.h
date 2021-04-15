@@ -12,6 +12,7 @@ public:
 	virtual void buildOldPas() {}
 	virtual void buildLgotPas() {}
 	virtual void buildChilPas() {}
+	virtual void buildLifeVest() {}
 	virtual void buildDriver() {}
 	//virtual void buildPassenger() {}
 
