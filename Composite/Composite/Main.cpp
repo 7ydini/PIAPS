@@ -84,7 +84,7 @@ public:
 	}
 	virtual void getStrength() {
 		//return 1;
-		std::cout << "Снят с рейса багаж пассажира эконом класса(кг): "<< bag << std::endl;
+		std::cout << "РЎРЅСЏС‚ СЃ СЂРµР№СЃР° Р±Р°РіР°Р¶ РїР°СЃСЃР°Р¶РёСЂР° СЌРєРѕРЅРѕРј РєР»Р°СЃСЃР°(РєРі): "<< bag << std::endl;
 	}
 };
 
@@ -118,23 +118,23 @@ private:
 
 };
 
-// Вспомогательная функция для создания борта
+// Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ Р±РѕСЂС‚Р°
 
 CompositeUnit* createBoard()
 
 {
-	// Борт содержит:
+	// Р‘РѕСЂС‚ СЃРѕРґРµСЂР¶РёС‚:
 	CompositeUnit* board = new CompositeUnit;
 
-	// 2 Пилота
+	// 2 РџРёР»РѕС‚Р°
 	for (int i = 0; i < 2; i++) 
 		board->addUnit(new Pylot);
 	
-	//2 Стюарда
+	//2 РЎС‚СЋР°СЂРґР°
 	for (int i = 0; i < 6; i++)
 		board->addUnit(new Stuard);
 
-	//До 10 пассажиров первого, бизнес (макс. 20 чел) и эконом (150 чел) classov.
+	//Р”Рѕ 10 РїР°СЃСЃР°Р¶РёСЂРѕРІ РїРµСЂРІРѕРіРѕ, Р±РёР·РЅРµСЃ (РјР°РєСЃ. 20 С‡РµР») Рё СЌРєРѕРЅРѕРј (150 С‡РµР») classov.
 	int cs = 0, pass = 0, sumBag = 0, maxBag = 100, bn = 0;
 	int passMaxF = 10, passMaxB = 20, passMaxE = 150;
 	int* baggage = new int[150];
@@ -142,7 +142,7 @@ CompositeUnit* createBoard()
 	while (cs != 4) {
 		cs = 0;
 		do {
-			std::cout << "Добавить пассажира: \n(1)Первого класса.\n(2)Бизнес класса.\n(3)Эконом класса.\n\n(4)Отправиться.\n\nВвод >> ";
+			std::cout << "Р”РѕР±Р°РІРёС‚СЊ РїР°СЃСЃР°Р¶РёСЂР°: \n(1)РџРµСЂРІРѕРіРѕ РєР»Р°СЃСЃР°.\n(2)Р‘РёР·РЅРµСЃ РєР»Р°СЃСЃР°.\n(3)Р­РєРѕРЅРѕРј РєР»Р°СЃСЃР°.\n\n(4)РћС‚РїСЂР°РІРёС‚СЊСЃСЏ.\n\nР’РІРѕРґ >> ";
 			std::cin >> cs;
 		} while (cs < 0 || cs > 4);
 		switch (cs)
@@ -152,17 +152,17 @@ CompositeUnit* createBoard()
 			if (passMaxF != 0) {
 				int bag = 0;
 				do {
-					std::cout << "Введите тоннаж багажа в кг(от 5 до 60)." << std::endl << "Ввод >> ";
+					std::cout << "Р’РІРµРґРёС‚Рµ С‚РѕРЅРЅР°Р¶ Р±Р°РіР°Р¶Р° РІ РєРі(РѕС‚ 5 РґРѕ 60)." << std::endl << "Р’РІРѕРґ >> ";
 					std::cin >> bag;
 				} while (bag > 60 || bag < 5);
 				sumBag += bag;
 				pass++;
 
 				board->addUnit(new FirstClassPassenger(bag));
-				std::cout << "Пассажир добавлен\n\n" << std::endl;
+				std::cout << "РџР°СЃСЃР°Р¶РёСЂ РґРѕР±Р°РІР»РµРЅ\n\n" << std::endl;
 				passMaxF--;
 			}
-			else std::cout << "Максимальное кол-во пассажиров первого класса!" << std::endl;
+			else std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїР°СЃСЃР°Р¶РёСЂРѕРІ РїРµСЂРІРѕРіРѕ РєР»Р°СЃСЃР°!" << std::endl;
 
 			break;
 		}
@@ -171,17 +171,17 @@ CompositeUnit* createBoard()
 			if (passMaxB != 0) {
 			int bag = 0;
 			do {
-				std::cout << "Введите тоннаж багажа в кг(от 5 до 60) 35кг бесплатно." << std::endl << "Ввод >> ";
+				std::cout << "Р’РІРµРґРёС‚Рµ С‚РѕРЅРЅР°Р¶ Р±Р°РіР°Р¶Р° РІ РєРі(РѕС‚ 5 РґРѕ 60) 35РєРі Р±РµСЃРїР»Р°С‚РЅРѕ." << std::endl << "Р’РІРѕРґ >> ";
 				std::cin >> bag;
 			} while (bag > 60 || bag < 5);
 			sumBag += bag;
 			pass++;
 			
 			board->addUnit(new BusinessClassPassenger(bag));
-			std::cout << "Пассажир добавлен\n\n" << std::endl;
+			std::cout << "РџР°СЃСЃР°Р¶РёСЂ РґРѕР±Р°РІР»РµРЅ\n\n" << std::endl;
 			passMaxB--;
 			}
-			else std::cout << "Максимальное кол-во пассажиров бизнес класса!" << std::endl;
+			else std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїР°СЃСЃР°Р¶РёСЂРѕРІ Р±РёР·РЅРµСЃ РєР»Р°СЃСЃР°!" << std::endl;
 			break;
 		}
 		case(3):
@@ -189,7 +189,7 @@ CompositeUnit* createBoard()
 			if(passMaxE != 0){
 			int bag = 0;
 			do {
-				std::cout << "Введите тоннаж багажа в кг(от 5 до 60) 20 кг бесплатно." << std::endl << "Ввод >> ";
+				std::cout << "Р’РІРµРґРёС‚Рµ С‚РѕРЅРЅР°Р¶ Р±Р°РіР°Р¶Р° РІ РєРі(РѕС‚ 5 РґРѕ 60) 20 РєРі Р±РµСЃРїР»Р°С‚РЅРѕ." << std::endl << "Р’РІРѕРґ >> ";
 				std::cin >> bag;
 			} while (bag > 60 || bag < 5);
 			sumBag += bag;
@@ -197,11 +197,11 @@ CompositeUnit* createBoard()
 			baggage[bn] = bag;
 			bn++;
 			board->addUnit(new EcoClassPassenger(bag));
-			std::cout << "Пассажир добавлен" << std::endl;
-			std::cout << "Сумма багажа:"<< sumBag << "\n\n" <<std::endl;
+			std::cout << "РџР°СЃСЃР°Р¶РёСЂ РґРѕР±Р°РІР»РµРЅ" << std::endl;
+			std::cout << "РЎСѓРјРјР° Р±Р°РіР°Р¶Р°:"<< sumBag << "\n\n" <<std::endl;
 			passMaxE--;
 		}
-			else std::cout << "Максимальное кол-во пассажиров эконом класса!" << std::endl;
+			else std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»-РІРѕ РїР°СЃСЃР°Р¶РёСЂРѕРІ СЌРєРѕРЅРѕРј РєР»Р°СЃСЃР°!" << std::endl;
 			break;
 		}
 		case(4):
