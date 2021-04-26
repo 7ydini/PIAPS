@@ -4,85 +4,85 @@
 
 // Component
 
-class Unit
+class People
 {
 public:
-	virtual void getStrength() = 0;
+	virtual void getInfo() = 0;
 
-	virtual void addUnit(Unit* p) {
+	virtual void addUnit(People* p) {
 
 		assert(false);
 	}
-	virtual ~Unit() {}
+	virtual ~People() {}
 };
 
 // Primitives
 
-class Pylot : public Unit
+class Pylot : public People
 {
 public:
-	virtual void getStrength() {
+	virtual void getInfo() {
 		std::cout << "Pylot" << std::endl;
 		//return 1;
 	}
 };
 
-class Stuard : public Unit
+class Stuard : public People
 {
 public:
-	virtual void getStrength() {
+	virtual void getInfo() {
 		std::cout << "Stuard" << std::endl;
 		//return 1;
 	}
 };
 
-class FirstClassPassenger : public Unit
+class FirstClassPassenger : public People
 {
 public:
 	int bag = 0;
 	FirstClassPassenger(int b) {
 		bag = b;
 	}
-	virtual void getStrength() {
+	virtual void getInfo() {
 		//return 1;
 		std::cout << "FirstClassPassenger baggage: " << bag << std::endl;
 	}
 };
 
-class BusinessClassPassenger : public Unit
+class BusinessClassPassenger : public People
 {
 public:
 	int bag = 0;
 	BusinessClassPassenger(int b) {
 		bag = b;
 	}
-	virtual void getStrength() {
+	virtual void getInfo() {
 		//return 1;
 		std::cout << "BusinessClassPassenger baggage: " << bag << std::endl;
 	}
 };
 
-class EcoClassPassenger : public Unit
+class EcoClassPassenger : public People
 {
 public:
 	int bag = 0;
 	EcoClassPassenger(int b) {
 		bag = b;
 	}
-	virtual void getStrength() {
+	virtual void getInfo() {
 		//return 1;
 		std::cout << "EconomyClassPassenger baggage: " << bag << std::endl;
 	}
 };
 
-class Baggage : public Unit
+class Baggage : public People
 {
 public:
 	int bag = 0;
 	Baggage(int b) {
 		bag = b;
 	}
-	virtual void getStrength() {
+	virtual void getInfo() {
 		//return 1;
 		std::cout << "Снят с рейса багаж пассажира эконом класса(кг): "<< bag << std::endl;
 	}
@@ -90,22 +90,22 @@ public:
 
 // Composite
 
-class CompositeUnit : public Unit
+class CompositePeople : public People
 {
 public:
 
-	void getStrength() {
+	void getInfo() {
 		for (int i = 0; i < c.size(); ++i)
-			c[i]->getStrength();
+			c[i]->getInfo();
 			//total += c[i]->getStrength();
 	}
-	void addUnit(Unit* p) {
+	void addUnit(People* p) {
 
 		c.push_back(p);
 
 	}
 
-	~CompositeUnit() {
+	~CompositePeople() {
 
 		for (int i = 0; i < c.size(); ++i)
 			delete c[i];
@@ -114,17 +114,17 @@ public:
 
 private:
 
-	std::vector<Unit*> c;
+	std::vector<People*> c;
 
 };
 
 // Вспомогательная функция для создания борта
 
-CompositeUnit* createBoard()
+CompositePeople* createBoard()
 
 {
 	// Борт содержит:
-	CompositeUnit* board = new CompositeUnit;
+	CompositePeople* board = new CompositePeople;
 
 	// 2 Пилота
 	for (int i = 0; i < 2; i++) 
@@ -228,10 +228,10 @@ CompositeUnit* createBoard()
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	CompositeUnit* board = new CompositeUnit;
+	CompositePeople* board = new CompositePeople;
 	board->addUnit(createBoard());
 	std::cout << "Board>>\n " << std::endl;
-	board->getStrength();
+	board->getInfo();
 	int g = 0;
 	std::cin >> g;
 	delete board;
