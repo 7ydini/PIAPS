@@ -12,9 +12,9 @@ namespace ProxyPattern
 {
     class PictureForm : PictureBox
     {
+        Picture imageContainer;
         int lastX;
         int lastY;
-        Picture imageContainer;
         public PictureForm(Picture imageContainer, int x, int y, int w, int h)
         {
             this.imageContainer = imageContainer;
@@ -29,7 +29,7 @@ namespace ProxyPattern
         }
         public void LoadPicture()
         {
-            Image = imageContainer.GetImage();
+            Image = imageContainer.getImage();
         }
         public void DragLisener(Object Sender, MouseEventArgs args)
         {

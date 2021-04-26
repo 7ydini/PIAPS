@@ -9,8 +9,10 @@ namespace ProxyPattern
 {
     interface Picture
     {
-        Image GetImage();
+        Image getImage();
     }
+
+
     class Proxy : Picture
     {
         String file;
@@ -19,15 +21,17 @@ namespace ProxyPattern
         {
             this.file = file;
         }
-        public Image GetImage()
+        public Image getImage()
         {
             if (img == null)
             {
                 img = new MyImage(file);
             }
-            return img.GetImage();
+            return img.getImage();
         }
     }
+
+
     class MyImage : Picture
     {
         Image img;
@@ -35,7 +39,7 @@ namespace ProxyPattern
         {
             img = Image.FromFile(fileName);
         }
-        public Image GetImage()
+        public Image getImage()
         {
             return img;
         }

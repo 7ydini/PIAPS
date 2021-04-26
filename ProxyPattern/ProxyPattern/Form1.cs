@@ -16,9 +16,9 @@ namespace ProxyPattern
         public Form1()
         {
             InitializeComponent();
-            this.MouseDown += Drag;
+            this.MouseDown += DragListener;
         }
-        public void Drag(Object Sender, MouseEventArgs args)
+        public void DragListener(Object Sender, MouseEventArgs args)
         {
             if (picture == null)
             {
