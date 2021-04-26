@@ -1,0 +1,4 @@
+﻿  Main.cpp
+C:\Users\dimma\source\repos\Composite\Composite\Main.cpp(98,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\dimma\source\repos\Composite\Composite\Main.cpp(110,21): warning C4018: <: несоответствие типов со знаком и без знака
+  Composite.vcxproj -> C:\Users\dimma\source\repos\Composite\Debug\Composite.exe
