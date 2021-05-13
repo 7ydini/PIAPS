@@ -19,19 +19,15 @@ public class Spaces extends AbstractExpression{
         context = context.replace(" ;", ";");
         return context;
         /*
-        String[] arr = context.split(".");
-        for(String array: arr){
-        	if(array.length() > 0){
-        	array.replaceFirst(String.valueOf(array.charAt(1)), String.valueOf(array.charAt(1)).toUpperCase());
-        	//array.charAt(1);
-        	//array.substring(1).toUpperCase();
-        	}
-        	System.out.println(array);
-        	//array.replace(array.charAt(1),String.valueOf(array.charAt(1)).toUpperCase().);// String.valueOf(array.charAt(1)).toUpperCase();
-        }
         String mess = "";
         for(String array: arr){
-        	mess += array + ".";
+        	if(array.length() > 1){
+        		if(arr[0] == array){
+        			mess += array.replaceFirst(String.valueOf(array.charAt(0)), String.valueOf(array.charAt(0)).toUpperCase()) + ".";
+        		}else{
+        			mess += array.replaceFirst(String.valueOf(array.charAt(1)), String.valueOf(array.charAt(1)).toUpperCase()) + ".";
+        		}
+        	}
         }
         return mess;
         */
